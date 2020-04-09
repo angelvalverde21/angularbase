@@ -1,0 +1,30 @@
+<div *ngIf="loading" class="container text-center my-5">
+  <app-loading></app-loading>
+  <!-- <p>Cargando datos...</p> -->
+</div>
+
+
+<div  *ngIf="!loading" class="container">
+
+  <table class="table table-striped table-bordered my-4">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Producto</th>
+          <th>Descripcion Corta</th>
+          <th>Creado</th>
+          <th>Actualizado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos">
+          <td class="text-center">{{ producto.id }}</td>
+          <td><a [routerLink]="['/erp/item',producto.id]">{{ producto.post_title }}</a></td>
+          <td>{{ producto.post_sub_title }}</td>
+          <td>{{ producto.created_at }}</td>
+          <td>{{ producto.updated_at }}</td>
+        </tr>
+      </tbody>
+  </table>
+
+</div>

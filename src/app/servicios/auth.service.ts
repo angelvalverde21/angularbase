@@ -8,17 +8,17 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-    private url = 'https://identitytoolkit.googleapis.com/v1/accounts';
-    private apikey = 'AIzaSyCqcl7IP9sDxuqKMaKBE4JDwu7Es7l2kws';
- //https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
+  private url = 'https://identitytoolkit.googleapis.com/v1/accounts';
+  private apikey = 'AIzaSyCqcl7IP9sDxuqKMaKBE4JDwu7Es7l2kws';
+  //https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
 
- userToken: string;
+  userToken: string;
   
   constructor( private http: HttpClient) {
   
     this.lerrToken();
 
-   }
+  }
 
   logout(){
     localStorage.removeItem('token');

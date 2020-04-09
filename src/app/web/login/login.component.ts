@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../servicios/auth.service';
+
 import { UsuarioModel } from '../../models/usuario.model';
 import { NgForm } from '@angular/forms';
-import { AuthService } from '../../servicios/auth.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
@@ -30,8 +31,6 @@ export class LoginComponent implements OnInit {
 
   login (form: NgForm){
 
-
-
     if ( form.invalid ) { return; }
     
     Swal.fire({
@@ -53,7 +52,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('email', this.usuario.email);
         }
 
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/erp');
 
       }, (err)=>{
         console.log(err.error.error.message);

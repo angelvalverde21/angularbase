@@ -1,0 +1,15 @@
+<div *ngIf="loading" class="container text-center my-5">
+  <app-loading></app-loading>
+  <!-- <p>Cargando datos...</p> -->
+</div>
+
+
+<div  *ngIf="!loading" class="contente-page animated fadeIn">
+
+<p>
+  Fotos works
+</p>
+
+<router-outlet></router-outlet>
+
+</div>

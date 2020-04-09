@@ -1,0 +1,54 @@
+<div *ngIf="loading" class="container text-center my-5">
+  <app-loading></app-loading>
+  <!-- <p>Cargando datos...</p> -->
+</div>
+
+
+<div  *ngIf="!loading" class="contente-page animated fadeIn">
+  <h1 class="my-3">{{item.post_title}} <small>{{item.post_sub_title}}</small> </h1>
+  <hr>
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarItem" aria-controls="navbarItem" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarItem">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="./"><i class="fa fa-barcode mr-2" aria-hidden="true"></i> Info <span class="mx-2">|</span></a>
+        </li>
+ 
+        <li class="nav-item"  routerLinkActive="active">
+          <a class="nav-link" routerLink="stock"><i class="fa fa-bar-chart mr-2" aria-hidden="true"></i> Stock <span class="mx-2">|</span></a>
+        </li>
+
+        <li class="nav-item"  routerLinkActive="active">
+          <a class="nav-link" routerLink="fotos"><i class="fa fa-camera-retro mr-2" aria-hidden="true"></i> Sessiones de fotos <span class="mx-2">|</span></a>
+        </li>
+
+
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="../../productos"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Volver <span class="mx-2"></span></a>
+        </li>
+
+
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <div class="my-4">
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+</div>
+

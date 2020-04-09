@@ -54,7 +54,7 @@ export class RegistroComponent implements OnInit {
           localStorage.setItem('email', this.usuario.email);
         }
         
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/erp');
 
         console.log(data);
       }, (err) => {

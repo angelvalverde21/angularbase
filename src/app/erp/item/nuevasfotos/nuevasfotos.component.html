@@ -1,0 +1,51 @@
+<section>
+  <div class="anuncio">
+
+  </div>
+
+
+  <div class="forms">
+    
+      <input type="file" name="file[]" (change)="subiendoando($event)" accept="image/*" *ngIf="!loader" multiple=""/>
+
+  </div>
+  
+  <div class="progress"> 
+    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width': porcentajeCarga  + '%' }" [attr.aria-valuenow]="porcentajeCarga" aria-valuemin="0" aria-valuemax="100">{{porcentajeCarga | number: '1.0-0' }}%</div>
+  </div>
+
+<div>
+    <div class="card my-2" *ngFor="let url of urls">
+      <img width="50px" [src]="url" class="rounded mb-3 img-fluid"><span> Espere...</span>
+    </div>
+</div>
+
+
+  <div *ngIf="showPreview" class="preview">
+    <ul>
+
+      <li *ngFor="let foto of fotos">
+        
+        <div class="card my-2">
+
+        
+            <div class="m-2 imagen-cargada" *ngIf="foto.ver">
+              <img width="50px" height="50px" class="img-fluid" src={{foto.img}} alt="">
+              <span> Espere...</span>
+            </div>
+
+            <div class="m-2 icon-loading" *ngIf="!foto.ver">
+                <img width="50px" height="50px" class="img-fluid" src="assets/images/loading.gif" alt="">
+                <span> Espere... {{ foto.listo }} </span>
+            </div>
+
+        </div>
+
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+
+
